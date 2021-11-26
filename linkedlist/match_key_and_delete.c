@@ -35,8 +35,9 @@ void display(node *head)
     }
     printf("\n");
 }
-void delete_node(node **head,int key)
+int delete_node(node **head,int key)
 {
+    int flag = 0;
     node *ptr,*temp;
     ptr = *head;
     temp = ptr->next;
@@ -48,6 +49,7 @@ void delete_node(node **head,int key)
         }
         if(ptr->data == key)
         {
+            flag = 1;
             node* temp2;
             temp2 = ptr;
             *head = ptr = temp2->next;
@@ -59,6 +61,7 @@ void delete_node(node **head,int key)
         {
             if(temp->next == NULL)
             {
+                flag = 1;
                 node *temp2;
                 temp2 = temp;
                 ptr->next = NULL;
@@ -67,6 +70,7 @@ void delete_node(node **head,int key)
             }
             else
             {
+                flag = 1;
                 node *temp2;
                 temp2 = temp;
                 ptr->next = temp2->next;
@@ -78,9 +82,11 @@ void delete_node(node **head,int key)
         ptr = ptr->next;
         temp = ptr->next;
     }
+    return flag ;
 }
 int main()
 {
+    int flag ;
     node *head = NULL;
     int n,key;
     printf("Enter total number of node you want to enter\n");
@@ -90,8 +96,15 @@ int main()
     display(head);
     printf("Enter a key to search and delete:- ");
     scanf("%d",&key);
-    delete_node(&head,key);
+    flag = delete_node(&head,key);
+    if(flag == 1){
     printf("Elements after deletion are:- ");
     display(head);
+    }
+    else
+    {
+        printf("Key is not found\n");
+    }
     return 0;
 }
+
