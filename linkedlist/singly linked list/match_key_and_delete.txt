@@ -1,0 +1,2 @@
+Q -> Create a linked list by adding a node in Right hand side . Also input a number from user and then search that number in the linked list if it is present then update the
+linked list by deleting that node and then print the elements in the linked list. if the key is not present in the linked list then print a message "Key is not found".
