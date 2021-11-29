@@ -1,0 +1,1 @@
+Q-> create a linked list by adding a node in right hand side by asking number of nodes by the user and then reverse linked list.
