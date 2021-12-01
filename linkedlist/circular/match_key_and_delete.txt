@@ -1,0 +1,2 @@
+Q.-> create a circular linked list by adding a node in right hand side . Also input a key from user , search that key in the linked list if the key is found then update the linked
+list by deleting that node.
