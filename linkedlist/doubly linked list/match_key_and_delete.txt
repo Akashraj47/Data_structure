@@ -1,0 +1,2 @@
+Q.-> create a doubly linked list by adding a node in right hand side . Also enter a key from user and search it into the linked list , if key is fouund then update the linked
+list by deleting that node.
