@@ -30,11 +30,17 @@ void display(node *head)
 {
     node *temp;
     temp = head;
-    printf("Elements are:- ");
-    do{
-        printf("%d ",temp->data);
-        temp = temp->next;
-    }while(temp != head);
+    if(head == NULL)
+    {
+        printf("No element in liked list\n");
+    }
+    else{
+        printf("Elements are:- ");
+        do{
+            printf("%d ",temp->data);
+            temp = temp->next;
+        }while(temp != head);
+    }
 }
 void find_last(node *head,node **last)
 {
@@ -57,6 +63,15 @@ void delete_key_element(node **head,node **tail,int key)
     {
         if(ptr->data == key)
         {
+            if(ptr == last)
+            {
+                node *temp2;
+                temp2 = ptr;
+                *head = ptr = temp = NULL;
+                free(temp2);
+                break;
+            }
+            else{
             node *temp2;
             temp2  = ptr;
             *head = ptr = temp2->next;
@@ -65,8 +80,9 @@ void delete_key_element(node **head,node **tail,int key)
             last->next = *head;
             free(temp2);
             continue;
+            }
         }
-        if(temp->data == key)
+        else if(temp->data == key)
         {
             node *temp2;
             temp2 = temp;
@@ -94,17 +110,6 @@ int main(int argc, char const *argv[])
     printf("\nEnter key:- ");
     scanf("%d",&key);
     delete_key_element(&head,&last,key);
-    ptr = head;
-    temp = ptr ->next;
-    temp = head;
-    do
-    {
-        printf("%d ",temp->data);
-        temp = temp ->next;
-    } while (temp != head);
-    
-    
-   
-    
+    display(head);
     return 0;
 }
