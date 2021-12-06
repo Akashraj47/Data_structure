@@ -1,110 +1,120 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 typedef struct node
 {
-    struct node *pre;
     int data;
     struct node *next;
 }node;
-void create_doubly_linkedlist(node ** head,node **tail,int n)
+void create_circular_ll(node **head,int n)
 {
-    node *temp,*ptr;
-    ptr = *tail;
-    for(int i = 0;i<n;i++){
-    ptr = (node*)malloc(sizeof(node));
-    printf("Enter a data:- ");
-    scanf("%d",&(ptr->data));
-    if(*head == NULL)
+    node *ptr,*temp;
+    for(int i = 0;i<n;i++)
     {
-        *head = *tail = temp = ptr;
-        temp ->pre = NULL;
-        temp->next = NULL;
-
-    }
-    else{
-        *tail = ptr;
-        temp->next = ptr;
-        ptr->pre = temp;
-        ptr->next = NULL;
-        temp = ptr;
-    }
+        ptr = (node*)malloc(sizeof(node));
+        printf("Enter data:- ");
+        scanf("%d",&(ptr->data));
+        if (*head == NULL)
+        {
+            *head = temp = ptr;
+            ptr->next = *head;
+        }
+        else{
+            temp->next = ptr;
+            temp = ptr;
+            temp->next = *head;
+        }
+        
     }
 }
-void delete_key(node **head,node **last,int key)
+void display(node *head)
 {
     node *temp;
-    temp = *head;
-    while(temp != NULL)
+    temp = head;
+    if(head == NULL)
     {
-        if(temp->data == key)
+        printf("No element in liked list\n");
+    }
+    else{
+        printf("Elements are:- ");
+        do{
+            printf("%d ",temp->data);
+            temp = temp->next;
+        }while(temp != head);
+    }
+}
+void find_last(node *head,node **last)
+{
+    node *temp;
+    temp = head;
+    do{
+        if(temp->next == head)
         {
-            if (temp->pre == NULL)
-            {
-                node *ptr;
-                ptr = temp;
-                *head = temp = ptr->next;
-                temp->pre = NULL;
-                free(ptr);
-                continue;
-            }
-            if(temp->next == NULL)
-            {
-                node *ptr;
-                ptr = temp;
-                temp = ptr->pre;
-                *last = temp;
-                temp->next = NULL;
-                free(ptr);
-                continue;
-            }
-            else{
-                node *ptr;
-                ptr = temp;
-                ptr->next->pre = ptr->pre;
-                ptr->pre->next = ptr->next;
-                free(ptr);
-            }
-
+            *last = temp;
         }
         temp = temp->next;
-    }
+    }while(temp != head);
 }
-void display_elements(node *head)
+void delete_key_element(node **head,node **tail,int key)
 {
-    while (head != NULL)
+    node *ptr,*temp,*last;
+    ptr = *head;
+    temp = ptr->next;
+    do
     {
-        printf("%d ",head->data);
-        head = head->next;
-
-    }
-    printf("\n");
-    
-}
-void reverse_display(node *last)
-{
-    while (last != NULL)
-    {
-        printf("%d ",last->data);
-        last = last->pre;
-    }
-    printf("\n");
+        if(ptr->data == key)
+        {
+            if(ptr == last)
+            {
+                node *temp2;
+                temp2 = ptr;
+                *head = ptr = temp = NULL;
+                free(temp2);
+                break;
+            }
+            else{
+            node *temp2;
+            temp2  = ptr;
+            *head = ptr = temp2->next;
+            temp = ptr->next;
+            last = *tail;
+            last->next = *head;
+            free(temp2);
+            continue;
+            }
+        }
+        else if(temp->data == key)
+        {
+            node *temp2;
+            temp2 = temp;
+            ptr->next = temp2->next;
+            temp = ptr->next;
+            free(temp2);
+            continue;
+        }
+        ptr = ptr->next;
+        temp = ptr->next;
+    } while (temp != *head);
 }
 int main(int argc, char const *argv[])
 {
-    node *head=NULL,*last=NULL;
-    int n,key;
-    printf("Enter no. of node:- ");
+    node *head = NULL,*last;
+    node *temp,*ptr;
+    int key;
+    int n;
+    printf("Enter the number of node you want to enter\n");
     scanf("%d",&n);
-    create_doubly_linkedlist(&head,&last,n);
-    printf("Elements :- ");
-    display_elements(head);
-    printf("Elements in reverse :- ");
-    reverse_display(last);
-    printf("Enter a key:- ");
+    create_circular_ll(&head,n);
+    display(head);
+    temp = head;
+    find_last(head,&last);
+    printf("\nEnter key:- ");
     scanf("%d",&key);
-    delete_key(&head,&last,key);
-    printf("Elements after deletion are:- ");
-    display_elements(head);
+    delete_key_element(&head,&last,key);
+    display(head);
+    
+    
+   
+    
     return 0;
 }
-
