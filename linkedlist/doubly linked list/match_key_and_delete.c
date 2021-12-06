@@ -42,10 +42,18 @@ void delete_key(node **head,node **last,int key)
             {
                 node *ptr;
                 ptr = temp;
-                *head = temp = ptr->next;
-                temp->pre = NULL;
-                free(ptr);
-                continue;
+                if(temp == *last)
+                {
+                    *head = temp = *last = ptr->next;
+                    free(ptr);
+                    continue;
+                }
+                else{
+                    *head = temp = ptr->next;
+                    temp->pre = NULL;
+                    free(ptr);
+                    continue;
+                }
             }
             if(temp->next == NULL)
             {
