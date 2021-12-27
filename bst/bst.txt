@@ -1,1 +1,1 @@
-Menu driven program to insert display delete ans search a node in binary search tree.
+Menu driven program to insert ,display,  search and delete a node in binary search tree.
