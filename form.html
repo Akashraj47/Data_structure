@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <script src="form.js"></script>
+    <style>
+        #email{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <p style="color: blueviolet;" >
+        This is a aurvey form for knowing the intrest of people in 3 types of supercars
+        listed in the form
+     </p>
+    <form action="backend.py">
+    <div>
+        <label for="name">name:</label>
+        <input type="text" name="name" id="name">
+    </div>
+    <br>  
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" name="my email" id="email">
+    </div>
+    <br>  
+    <div>
+        <label for="Gender">Gender:</label>
+        Male:<input type="radio" name="Gender" id="Gender">Female:<input type="radio" name="Gender" id="Gender">
+    </div>
+    <br>  
+    <div>
+        <label for="date">choose date:</label>
+        <input type="date" name="date" id="date">
+    </div>
+    <br>  
+    <div>
+        <label for="date">Enter number:</label>
+        <input type="number" name="number" id="number">
+    </div>
+    <br>  
+    <div>
+        <label for="Car">Car:</label>
+        <select name="Car" id="car">
+        <option value="Ferrari">Ferrari</option>
+        <option value="Fortuner">Lambogini</option>
+        <option value="bail gadi">Tesla</option>
+        </select>
+    </div>
+    <br>  
+    <div>
+        <label for="text">Enter text": <br></label>
+        <textarea name="Text" id="text" cols="30" rows="30"></textarea>
+    </div>
+    <br>  
+    <div>
+        <br>
+        <input type="reset" value="Reset">
+    </div>
+    </form>
+</body>
+</html>
