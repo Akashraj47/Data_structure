@@ -2,7 +2,7 @@
 
 #include <iostream>
 using namespace std;
-int* merge(int *arr,int l,int mid,int h,int *comp)
+void merge(int *arr,int l,int mid,int h,int *comp)
 {
     int i=l,j=mid+1,k=l;
     int brr[h+1];
@@ -29,24 +29,21 @@ int* merge(int *arr,int l,int mid,int h,int *comp)
     {
         arr[p] = brr[p];
     }
-    return comp;
 }
-int merge_sort(int *arr,int l,int h)
+void merge_sort(int *arr,int l,int h,int *comp)
 {
-    static int comp = 0;
     int mid;
     if(l < h)
     {
         mid = (l+h)/2;
-        merge_sort(arr,l,mid);
-        merge_sort(arr,mid+1,h);
-        merge(arr,l,mid,h,&comp);
+        merge_sort(arr,l,mid,comp);
+        merge_sort(arr,mid+1,h,comp);
+        merge(arr,l,mid,h,comp);
     }
-    return comp;
 }
 int main()
 {
-    int comp;
+    int comp = 0;
     int n;
     cout << "Enter a number:- ";
     cin >> n;
@@ -56,7 +53,7 @@ int main()
     {
         cin >> arr[i];
     }
-    comp = merge_sort(arr,0,n-1);
+    merge_sort(arr,0,n-1,&comp);
     cout << "Sorted array is:- ";
     for(int i=0;i<n;i++)
     {
@@ -66,3 +63,4 @@ int main()
     cout << "Comparison :- " << comp;
     return 0;
 }
+
