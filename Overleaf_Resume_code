@@ -1,0 +1,88 @@
+\documentclass[a4paper,10pt]{article}
+%-----------------------------------------------------------
+\usepackage[top=0.75in, bottom=0.75in, left=0.55in, right=0.85in]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{palatino}
+\usepackage{tabularx}
+\fontfamily{SansSerif}
+\selectfont
+
+\usepackage[T1]{fontenc}
+\usepackage
+%[ansinew]
+[utf8]
+{inputenc}
+
+\usepackage{color}
+\definecolor{mygrey}{gray}{0.75}
+\textheight=9.75in
+\raggedbottom
+
+\setlength{\tabcolsep}{0in}
+\newcommand{\isep}{-2 pt}
+\newcommand{\lsep}{-0.5cm}
+\newcommand{\psep}{-0.6cm}
+\renewcommand{\labelitemii}{$\circ$}
+
+\pagestyle{empty}
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\small \colorbox{mygrey}{\begin{minipage}{0.975\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[3]{
+\begin{tabular*}{6.62in}{l @{\extracolsep{\fill}} r}
+	\textsc{{\textbf{#1}}} & \textsc{\textit{[#2]}} \\
+\end{tabular*}\vspace{-8pt}}
+%-----------------------------------------------------------
+
+\begin{document}
+\hspace{0.5cm}\\[-0.2cm]
+
+\textbf{Akash Raj} \\
+\indent Email-id : \textbf{\url{akashraj4518@gmail.com}} \\
+\indent Mobile No.: \textbf{7541800999} \ \\
+\indent \textbf{\url{https://github.com/Akashraj47}}\\
+\indent \textbf{\url{https://www.linkedin.com/in/akash-raj-33b31a217/}}\\
+
+\resheading{\textbf{ACADEMIC DETAILS} }\\[\lsep]
+\\
+%\begin{table}[ht!]
+%\begin{center}
+\indent \rule{6.8in}{0.4pt}\\
+\indent \begin{tabular}{ l @{\hskip 0.15in} l @{\hskip 0.15in} l @{\hskip 0.15in} l @{\hskip 0.15in} }
+\noindent \textbf{Year} & \textbf{Degree/Exam} & \textbf{Institute} & \textbf{GPA/Marks(\%)}\\
+Sep, 2020 - Present & B.TECH in Computer Science & Graphic Era hill University Dehradun & 9.14/10.0 \ \\
+2010 & 12^{th},/C.B.S.E & Golden bell Public School & 74.40 \% \\
+2008 & 10^{th}./C.B.S.E & Cambridge Public School &  9.0/10.0\\\
+
+\end{tabular}
+\indent \rule{6.8in}{0.4pt}
+%\end{center}
+%\end{table}
+\\
+
+\resheading{\textbf{PROJECTS} }\\[\lsep]
+\begin{itemize}
+\setlength\itemsep{0.5em}
+\item \textbf{Chatbot for University Query Resolution} (Oct, 2021 - Feb, 2022) : Developed a cloud based chatbot to clear the queries regarding university with chatterbot library and Tkinter for GUI.
+
+\end{itemize}
+
+\resheading{\textbf{TECHNICAL SKILLS} }\\[\lsep]
+\begin{itemize}
+\setlength\itemsep{0em}
+\item \noindent \textbf{Languages}: \textbf{Python} (proficient), \textbf{Javascript} (proficient), \textbf{C} (proficient), \textbf{C++} (proficient), \textbf{Java} (proficient).\\
+
+ \item \noindent\textbf{Tools}: Tkinter\\
+\end{itemize}
+
+\resheading{\textbf{SCHOLASTIC ACHIEVEMENTS} }\\[\lsep]
+\begin{itemize}
+\setlength\itemsep{0em}
+\item \noindent \textbf{3 star (Codechef) - }37133 (Country Rank), 40250 (Global Rank).
+\item \noindent\textbf{Maths Olympiad - }Secured 3 rd  rank in School.
+\end{itemize}
+
+
+\end{document}
