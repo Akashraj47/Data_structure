@@ -1,5 +1,4 @@
-// C++ code for Prim's Algo
-
+/* Code for prim's algorithm */
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -7,43 +6,52 @@ void add_edge(int p,int q,int w,vector<pair<int,int> >arr[]){
     arr[p].push_back({q,w});
     arr[q].push_back({p,w});
 }
-int min(int cost[],bool mst[]){
-    int j;
-    int m = INT_MAX;
+int min(int cost[],int v,bool mst[]){
+    int k = INT_MAX;
+    int index;
     for(int i = 0;i<v;i++){
         if(mst[i] != true){
-            if(cost[i] < m){
-                j = i;
+            if(cost[i] < k){
+                k = cost[i];
+                index = i;
             }
         }
     }
-    return j;
+    return index;
 }
-void MST(vector<pair<int,int>>arr[],int v,int e){
-    vector<pair<int,int>>p;
+vector<pair<int,pair<int,int> > > MST(vector<pair<int,int>>arr[],int v,int *tcost){
+    vector<pair<int , pair<int,int> > >p;
     int parent[v];
-    int cost[v];
     bool mst[v];
+    int cost[v];
     cost[0] = -1;
     for(int i = 1;i<v;i++){
         cost[i] = INT_MAX;
     }
-    parent[0] = -1;
     for(int i = 0;i<v;i++){
-        int m = min(cost,mst);
-        mst[m] = true;
-
-        for(vector<pair<int,int>>::iterator it = arr[m].begin();it != arr[m].end();it++){
+        int k = min(cost,v,mst);
+        mst[k] = true;
+        for(vector<pair<int,int>>::iterator it = arr[k].begin();it != arr[k].end(); it++){
             if(mst[(*it).first] != true){
-                // RELAX
-                // update weight
-                // update parent
+                if(mst[(*it).second] < cost[(*it).first]){
+                    cost[(*it).first] = (*it).second;
+                }
+                parent[(*it).first] = k;
             }
         }
     }
+    for(int i = 0;i<v;i++){
+        if(cost[i] != -1){
+            *tcost += cost[i];
+            p.push_back({cost[i],{i,parent[i]}});
+        }
+    }
+    return p;
+
 }
 int main(){
-    int v,e;
+    vector<pair <int , pair<int , int > > > p;
+    int v,e,cost = 0;
     cout << "Enter total vrtices:- ";
     cin >> v;
     cout << "Enter total edges:- ";
@@ -64,5 +72,12 @@ int main(){
         }
         cout << endl;
     }
-    MST(arr,v,e);
+    p = MST(arr,v,&cost);
+    cout << endl;
+    cout << "Minimal spanning tree is:- " << endl;
+    for(vector<pair<int,pair<int,int> > >::iterator it = p.begin();it != p.end();it++){
+        cout << (*it).second.first << " " << (*it).second.second << " --> " << (*it).first << endl;
+    }
+    cout << "Cost of Minimal spanning tree is:- " << cost << endl;
+    return 0;
 }
