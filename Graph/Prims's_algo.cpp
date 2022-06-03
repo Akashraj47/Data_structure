@@ -33,10 +33,10 @@ vector<pair<int,pair<int,int> > > MST(vector<pair<int,int>>arr[],int v,int *tcos
         mst[k] = true;
         for(vector<pair<int,int>>::iterator it = arr[k].begin();it != arr[k].end(); it++){
             if(mst[(*it).first] != true){
-                if(mst[(*it).second] < cost[(*it).first]){
+                if((*it).second < cost[(*it).first]){
                     cost[(*it).first] = (*it).second;
+                    parent[(*it).first] = k;
                 }
-                parent[(*it).first] = k;
             }
         }
     }
