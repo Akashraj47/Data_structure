@@ -39,22 +39,25 @@
 \begin{document}
 \hspace{0.5cm}\\[-0.2cm]
 
-\textbf{Akash Raj} \\
+\begin{Large}\textbf{}{Akash Raj} \\ \end{Large}
+\begin{large}
+\indent{Clement Town,Dehradun} \\
 \indent Email-id : \textbf{\url{akashraj4518@gmail.com}} \\
 \indent Mobile No.: \textbf{7541800999} \ \\
 \indent \textbf{\url{https://github.com/Akashraj47}}\\
 \indent \textbf{\url{https://www.linkedin.com/in/akash-raj-33b31a217/}}\\
 
-\resheading{\textbf{ACADEMIC DETAILS} }\\[\lsep]
+\resheading{\textbf {ACADEMIC DETAILS} }\\[\lsep]
 \\
 %\begin{table}[ht!]
 %\begin{center}
 \indent \rule{6.8in}{0.4pt}\\
 \indent \begin{tabular}{ l @{\hskip 0.15in} l @{\hskip 0.15in} l @{\hskip 0.15in} l @{\hskip 0.15in} }
-\noindent \textbf{Year} & \textbf{Degree/Exam} & \textbf{Institute} & \textbf{GPA/Marks(\%)}\\
-Sep, 2020 - Present & B.TECH in Computer Science & Graphic Era hill University Dehradun & 9.32/10.0 \ \\
+\noindent \textbf{Year} & \textbf{Degree/Exam} & \textbf{Institute} & \textbf{GPA/Marks}\\
+Sep, 2020 - Present & B.Tech in Computer Science & Graphic Era hill University & 9.32/10.0 \ \\
+& & Dehradun & \ \\
 2019 & 12^{th},/C.B.S.E & Golden bell Public School & 74.40 \% \\
-2017 & 10^{th}./C.B.S.E & Cambridge Public School &  9.0/10.0\\\
+2017 & 10^{th},/C.B.S.E & Cambridge Public School &  9.0/10.0\\\
 
 \end{tabular}
 \indent \rule{6.8in}{0.4pt}
@@ -62,28 +65,57 @@ Sep, 2020 - Present & B.TECH in Computer Science & Graphic Era hill University D
 %\end{table}
 \\
 
+
 \resheading{\textbf{PROJECTS} }\\[\lsep]
 \begin{itemize}
 \setlength\itemsep{0.5em}
 \item \textbf{Chatbot for University Query Resolution} (Oct, 2021 - Feb, 2022) : Developed a cloud based chatbot to clear the queries regarding university with chatterbot library and Tkinter for GUI.
 
-\item\textbf{Face Recognition} (April, 2022 - june, 2022) : Face recognition build with python, Os module, Face Recognition Module, Numpy. 
+
+\item\textbf{Face Recognition} (April 2022 - June 2022) : Face Recognition using python, OS Module, Face Recognition Module, and openCv.  
+
+
 \end{itemize}
 
 \resheading{\textbf{TECHNICAL SKILLS} }\\[\lsep]
 \begin{itemize}
-\setlength\itemsep{0em}
-\item \noindent \textbf{Languages}: \textbf{Python} (proficient), \textbf{Javascript} (proficient), \textbf{C} (proficient), \textbf{C++} (proficient), \textbf{Java} (proficient).\\
+\setlength\itemsep{0.5em}
+\item\textbf{Languages}:\textbf{C}(proficient) ,\textbf{Python}(proficient) ,\textbf{C++}(proficient),
+\textbf{HTML} (proficient) ,\textbf{Java} (proficient).\\
 
- \item \noindent\textbf{Tools}: Tkinter\\
+\item\textbf{Tools}: Tkinter\\
 \end{itemize}
 
 \resheading{\textbf{SCHOLASTIC ACHIEVEMENTS} }\\[\lsep]
 \begin{itemize}
 \setlength\itemsep{0em}
-\item \noindent \textbf{3 star (Codechef) - }37133 (Country Rank), 40250 (Global Rank).
+\item \noindent \textbf{2 star (Codechef) - }94531 (Country Rank), 87907 (Global Rank).
 \item \noindent\textbf{Maths Olympiad - }Secured 3 rd  rank in School.
 \end{itemize}
 
+\resheading{\textbf{STRENGTHS} }\\[\lsep]
+\begin{itemize}
+\setlength\itemsep{0em}
+\item \noindent \textbf{Time Management Skills.}
+\item \noindent\textbf{Pressure handling ability.}
+\item \noindent\textbf{Decision making ability.}
+\end{itemize}
+
+
+\begin{itemize}
+\parskip 20mm Date:
+\\  Place: \hspace*{380} {Akash Raj}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+\end{large}
 
 \end{document}
